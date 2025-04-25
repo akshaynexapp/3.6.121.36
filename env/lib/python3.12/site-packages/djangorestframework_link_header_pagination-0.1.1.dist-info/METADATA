@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: djangorestframework-link-header-pagination
+Version: 0.1.1
+Summary: Provide pagination using a "Link" HTTP header as described in https://developer.github.com/guides/traversing-with-pagination/
+Home-page: https://github.com/tbeadle/django-rest-framework-link-header-pagination
+Author: Tommy Beadle
+Author-email: tbeadle@gmail.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Dist: djangorestframework
+
+UNKNOWN
+
+
