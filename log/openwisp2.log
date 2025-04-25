@@ -1,0 +1,1727 @@
+[WARNING 2025-04-24 04:42:43,803] module: log, process: 1391, thread: 134265345935040
+Not Found: /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+
+[WARNING 2025-04-24 04:42:44,483] module: log, process: 1391, thread: 134265345935040
+Not Found: /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+
+[WARNING 2025-04-24 05:47:43,869] module: log, process: 24063, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[INFO 2025-04-24 05:47:44,494] module: utils, process: 24063, thread: 131431060920128
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 1 out of 6.
+
+
+[INFO 2025-04-24 05:47:44,497] module: utils, process: 24063, thread: 131431060920128
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 2 out of 6.
+
+
+[INFO 2025-04-24 05:47:44,499] module: utils, process: 24063, thread: 131431060920128
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 3 out of 6.
+
+
+[INFO 2025-04-24 05:47:44,501] module: utils, process: 24063, thread: 131431060920128
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 4 out of 6.
+
+
+[INFO 2025-04-24 05:47:46,504] module: utils, process: 24063, thread: 131431060920128
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 5 out of 6.
+
+
+[INFO 2025-04-24 05:47:48,507] module: utils, process: 24063, thread: 131431060920128
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 6 out of 6.
+
+
+[ERROR 2025-04-24 05:47:50,508] module: models, process: 24063, thread: 131431060920128
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/base/models.py", line 772, in read
+    points = timeseries_db.get_list_query(data_query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 277, in get_list_query
+    result = self.query(query, precision=precision)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 33, in wrapper
+    raise err
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 24, in wrapper
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 143, in query
+    return self.db.query(
+           ^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 532, in query
+    response = self.request(
+               ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 389, in request
+    raise InfluxDBClientError(err_msg, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+[ERROR 2025-04-24 05:47:50,599] module: log, process: 24063, thread: 131431060920128
+Internal Server Error: /api/v1/monitoring/dashboard/
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/api/views.py", line 185, in get
+    response = super().get(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/views.py", line 76, in get
+    data = self._get_charts_data(charts, time, timezone, start_date, end_date)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/views.py", line 96, in _get_charts_data
+    chart_dict = chart.read(
+                 ^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/base/models.py", line 776, in read
+    raise e
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/base/models.py", line 772, in read
+    points = timeseries_db.get_list_query(data_query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 277, in get_list_query
+    result = self.query(query, precision=precision)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 33, in wrapper
+    raise err
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 24, in wrapper
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 143, in query
+    return self.db.query(
+           ^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 532, in query
+    response = self.request(
+               ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 389, in request
+    raise InfluxDBClientError(err_msg, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+[WARNING 2025-04-24 05:47:50,620] module: log, process: 24063, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:48:15,086] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:48:23,185] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:48:39,257] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:49:11,413] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:49:13,564] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:49:17,661] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:49:25,796] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:49:41,959] module: log, process: 24067, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:50:21,242] module: log, process: 24105, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:50:43,353] module: log, process: 24106, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:50:47,428] module: log, process: 24106, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:50:55,574] module: log, process: 24106, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:51:11,687] module: log, process: 24106, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[INFO 2025-04-24 05:51:34,779] module: models, process: 24106, thread: 131431060920128
+Running full_clean...
+
+[INFO 2025-04-24 05:51:34,782] module: models, process: 24106, thread: 131431060920128
+Assigning subnet if needed...
+
+[INFO 2025-04-24 05:51:34,782] module: models, process: 24106, thread: 131431060920128
+Saving Tunnel...
+
+[WARNING 2025-04-24 05:52:03,367] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:52:05,465] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:52:09,548] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:52:17,696] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:52:33,796] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:53:05,964] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:53:08,066] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:53:12,207] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:53:20,362] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:53:36,459] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:54:08,551] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:54:10,624] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:54:14,717] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:54:22,843] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:54:38,943] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:55:11,089] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:55:13,248] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:55:17,411] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:55:25,762] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:55:45,018] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:56:17,177] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:56:19,303] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:56:23,404] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:56:31,526] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:56:47,677] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:57:19,786] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:57:21,905] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:57:26,004] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:57:34,076] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:57:50,147] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:58:22,288] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:58:24,440] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:58:28,535] module: log, process: 24108, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:58:57,332] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:59:13,424] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:59:45,566] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:59:47,702] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:59:51,794] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 05:59:59,893] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:00:16,035] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:00:48,198] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:00:50,292] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:00:54,410] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:01:02,506] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:01:18,582] module: log, process: 24417, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[INFO 2025-04-24 06:01:20,214] module: models, process: 24417, thread: 131431060920128
+Running full_clean...
+
+[INFO 2025-04-24 06:01:20,218] module: models, process: 24417, thread: 131431060920128
+Assigning subnet if needed...
+
+[INFO 2025-04-24 06:01:20,218] module: models, process: 24417, thread: 131431060920128
+Saving Tunnel...
+
+[WARNING 2025-04-24 06:01:45,106] module: log, process: 24452, thread: 131431060920128
+Not Found: /owa/auth/x.js
+
+[WARNING 2025-04-24 06:01:50,672] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:01:52,750] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:01:56,880] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:01:57,097] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,099] module: base, process: 24452, thread: 131431060920128
+view's LocationDeviceList raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 202, in get_queryset
+    super().get_queryset()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 105, in get_queryset
+    self.assert_parent_exists()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 109, in assert_parent_exists
+    parent_queryset = self.get_parent_queryset()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 198, in get_parent_queryset
+    qs = Location.objects.filter(pk=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,102] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 129, in get_queryset
+    .filter(device_id=self.kwargs['pk'])
+                      ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,104] module: base, process: 24452, thread: 131431060920128
+view's MonitoringNearbyDeviceList raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/device/api/views.py", line 268, in get_queryset
+    location_lookup = Q(devicelocation__content_object_id=self.kwargs['pk'])
+                                                          ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,105] module: base, process: 24452, thread: 131431060920128
+view's MonitoringLocationDeviceList raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/device/api/views.py", line 251, in get_queryset
+    return super().get_queryset().select_related('monitoring').order_by('name')
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 202, in get_queryset
+    super().get_queryset()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 105, in get_queryset
+    self.assert_parent_exists()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 109, in assert_parent_exists
+    parent_queryset = self.get_parent_queryset()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 198, in get_parent_queryset
+    qs = Location.objects.filter(pk=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,107] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 129, in get_queryset
+    .filter(device_id=self.kwargs['pk'])
+                      ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,109] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,112] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,114] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,277] module: base, process: 24452, thread: 131431060920128
+view's CommandListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:01:57,280] module: base, process: 24452, thread: 131431060920128
+view's CommandListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:01:57,280] module: base, process: 24452, thread: 131431060920128
+view's CommandListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:01:57,282] module: base, process: 24452, thread: 131431060920128
+view's CommandDetailsView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:01:57,284] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,285] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,286] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,287] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,288] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,289] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,290] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,290] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,297] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,298] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,299] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,299] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:01:57,300] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:00,767] module: log, process: 24452, thread: 131431060920128
+Not Found: /favicon.ico
+
+[WARNING 2025-04-24 06:02:01,996] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:01,997] module: base, process: 24452, thread: 131431060920128
+view's LocationDeviceList raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 202, in get_queryset
+    super().get_queryset()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 105, in get_queryset
+    self.assert_parent_exists()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 109, in assert_parent_exists
+    parent_queryset = self.get_parent_queryset()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 198, in get_parent_queryset
+    qs = Location.objects.filter(pk=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:01,999] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 129, in get_queryset
+    .filter(device_id=self.kwargs['pk'])
+                      ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,001] module: base, process: 24452, thread: 131431060920128
+view's MonitoringNearbyDeviceList raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/device/api/views.py", line 268, in get_queryset
+    location_lookup = Q(devicelocation__content_object_id=self.kwargs['pk'])
+                                                          ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,002] module: base, process: 24452, thread: 131431060920128
+view's MonitoringLocationDeviceList raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/device/api/views.py", line 251, in get_queryset
+    return super().get_queryset().select_related('monitoring').order_by('name')
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 202, in get_queryset
+    super().get_queryset()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 105, in get_queryset
+    self.assert_parent_exists()
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_users/api/mixins.py", line 109, in assert_parent_exists
+    parent_queryset = self.get_parent_queryset()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 198, in get_parent_queryset
+    qs = Location.objects.filter(pk=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,005] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 129, in get_queryset
+    .filter(device_id=self.kwargs['pk'])
+                      ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,006] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,009] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,012] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 122, in get_queryset
+    return qs.filter(content_object=self.kwargs['pk'])
+                                    ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,182] module: base, process: 24452, thread: 131431060920128
+view's CommandListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:02:02,183] module: base, process: 24452, thread: 131431060920128
+view's CommandListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:02:02,184] module: base, process: 24452, thread: 131431060920128
+view's CommandListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:02:02,186] module: base, process: 24452, thread: 131431060920128
+view's CommandDetailsView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 60, in get_serializer_context
+    context['device_id'] = self.kwargs['id']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'id'
+[WARNING 2025-04-24 06:02:02,188] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,189] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,190] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnenctionListCreateView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,191] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,192] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,192] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,193] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,194] module: base, process: 24452, thread: 131431060920128
+view's DeviceConnectionDetailView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/connection/api/views.py", line 104, in get_serializer_context
+    context['device_id'] = self.kwargs['pk']
+                           ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,201] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,202] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,203] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,204] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:02,204] module: base, process: 24452, thread: 131431060920128
+view's DeviceLocationView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/drf_yasg/inspectors/base.py", line 42, in call_view_method
+    return view_method()
+           ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/generics.py", line 113, in get_serializer
+    kwargs.setdefault('context', self.get_serializer_context())
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_controller/geo/api/views.py", line 133, in get_serializer_context
+    context.update({'device_id': self.kwargs['pk']})
+                                 ~~~~~~~~~~~^^^^^^
+KeyError: 'pk'
+[WARNING 2025-04-24 06:02:04,980] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:02:21,101] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:02:36,785] module: log, process: 24452, thread: 131431060920128
+Not Found: /admin/nexapp_users/user/
+
+[WARNING 2025-04-24 06:02:44,666] module: log, process: 24452, thread: 131431060920128
+Not Found: /admin/nexapp_users/user/
+
+[WARNING 2025-04-24 06:02:53,225] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:02:55,346] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:02:59,442] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:03:07,571] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:03:23,710] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:03:55,873] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:03:58,036] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:04:03,533] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:04:11,626] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:04:27,710] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:04:59,813] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:05:01,910] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:05:05,999] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:05:14,075] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:05:30,153] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:06:02,289] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:06:04,386] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:06:08,466] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:06:16,542] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:06:32,665] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:07:04,777] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:07:06,853] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:07:10,993] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:07:19,137] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:07:35,286] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:08:07,402] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:08:09,491] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:08:13,638] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:08:21,760] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:08:37,883] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:09:09,992] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:09:12,121] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:09:16,269] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:09:24,370] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:09:40,619] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:10:12,805] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:10:14,913] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:10:18,985] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:10:27,109] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:10:43,248] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:11:15,417] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:11:17,571] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:11:21,720] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:11:29,865] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:11:46,011] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:12:18,177] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:12:20,327] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:12:24,475] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:12:32,612] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:12:48,756] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:13:20,911] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:13:23,053] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:13:27,193] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:13:35,334] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:13:51,475] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:14:23,630] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:14:25,788] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:14:30,082] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:14:38,261] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:14:57,580] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:15:29,739] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:15:31,896] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:15:36,062] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:15:44,212] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:16:00,447] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:16:32,600] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:16:34,750] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:16:38,893] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:16:47,143] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:17:03,331] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:17:35,508] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:17:37,668] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:17:41,842] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:17:50,024] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:18:06,178] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:18:38,344] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:18:40,929] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:18:45,152] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:18:53,326] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:19:09,503] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:19:41,672] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:19:43,820] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:19:47,969] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:19:56,148] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:20:12,844] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:20:45,025] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:20:47,184] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:20:51,336] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:20:59,494] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:21:15,674] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:21:47,861] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:21:50,017] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:21:54,164] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:22:02,326] module: log, process: 24452, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:22:36,375] module: log, process: 24905, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[ERROR 2025-04-24 06:23:07,362] module: log, process: 24907, thread: 131431060920128
+Internal Server Error: /admin/nexapp_vpn/tunnel/23/rollback/
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/nexapp_vpn/admin.py", line 48, in process_rollback
+    result = tunnel.rollback_last_config()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/nexapp_vpn/models.py", line 467, in rollback_last_config
+    agent_url = self.get_agent_url()
+                ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tunnel' object has no attribute 'get_agent_url'
+[WARNING 2025-04-24 06:23:08,571] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:23:10,719] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:23:14,924] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:23:23,075] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:23:39,644] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:24:12,117] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:24:14,190] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:24:18,264] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:24:26,340] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:24:42,479] module: log, process: 24907, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:25:14,788] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:25:16,879] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:25:21,007] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:25:29,171] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:25:45,267] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:26:17,359] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:26:19,437] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:26:23,510] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:26:31,646] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:26:47,801] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:27:19,907] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:27:22,040] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:27:26,178] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:27:34,352] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:27:50,446] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:28:22,541] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:28:24,618] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:28:28,695] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:28:36,849] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:28:52,950] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:29:25,046] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:29:27,149] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:29:31,320] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:29:39,657] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:29:55,728] module: log, process: 25004, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:30:29,847] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:30:32,024] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:30:36,445] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:30:44,566] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:31:00,639] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:31:32,797] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:31:34,907] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:31:39,041] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:31:47,196] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:32:03,301] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:32:35,451] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:32:37,602] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:32:41,696] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:32:49,770] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:33:05,844] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:33:37,991] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:33:40,173] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:33:44,329] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:33:52,489] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:34:08,679] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:34:40,816] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:34:43,118] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:34:47,252] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:34:55,348] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:35:11,424] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:35:43,514] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:35:45,643] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:35:49,842] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:35:57,920] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:36:13,995] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:36:46,155] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:36:48,262] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:36:52,347] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:37:00,431] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:37:16,506] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:37:48,614] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:37:50,746] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:37:54,845] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:38:02,934] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:38:19,011] module: log, process: 25103, thread: 131431060920128
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:39:11,712] module: log, process: 25514, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:39:27,857] module: log, process: 25514, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:39:59,965] module: log, process: 25514, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:40:02,048] module: log, process: 25514, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:40:06,132] module: log, process: 25514, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:40:14,214] module: log, process: 25514, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[INFO 2025-04-24 06:40:16,858] module: utils, process: 25514, thread: 124764027123520
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 1 out of 6.
+
+
+[INFO 2025-04-24 06:40:16,861] module: utils, process: 25514, thread: 124764027123520
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 2 out of 6.
+
+
+[INFO 2025-04-24 06:40:16,863] module: utils, process: 25514, thread: 124764027123520
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 3 out of 6.
+
+
+[INFO 2025-04-24 06:40:16,865] module: utils, process: 25514, thread: 124764027123520
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 4 out of 6.
+
+
+[INFO 2025-04-24 06:40:18,868] module: utils, process: 25514, thread: 124764027123520
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 5 out of 6.
+
+
+[INFO 2025-04-24 06:40:20,871] module: utils, process: 25514, thread: 124764027123520
+Error while executing method "query":
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Attempt 6 out of 6.
+
+
+[ERROR 2025-04-24 06:40:22,872] module: models, process: 25514, thread: 124764027123520
+400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/base/models.py", line 772, in read
+    points = timeseries_db.get_list_query(data_query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 277, in get_list_query
+    result = self.query(query, precision=precision)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 33, in wrapper
+    raise err
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 24, in wrapper
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 143, in query
+    return self.db.query(
+           ^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 532, in query
+    response = self.request(
+               ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 389, in request
+    raise InfluxDBClientError(err_msg, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+[ERROR 2025-04-24 06:40:22,991] module: log, process: 25514, thread: 124764027123520
+Internal Server Error: /api/v1/monitoring/dashboard/
+Traceback (most recent call last):
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/api/views.py", line 185, in get
+    response = super().get(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/views.py", line 76, in get
+    data = self._get_charts_data(charts, time, timezone, start_date, end_date)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/views.py", line 96, in _get_charts_data
+    chart_dict = chart.read(
+                 ^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/base/models.py", line 776, in read
+    raise e
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/monitoring/base/models.py", line 772, in read
+    points = timeseries_db.get_list_query(data_query)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 277, in get_list_query
+    result = self.query(query, precision=precision)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 33, in wrapper
+    raise err
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/utils.py", line 24, in wrapper
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/openwisp_monitoring/db/backends/influxdb/client.py", line 143, in query
+    return self.db.query(
+           ^^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 532, in query
+    response = self.request(
+               ^^^^^^^^^^^^^
+  File "/opt/openwisp2/env/lib/python3.12/site-packages/influxdb/client.py", line 389, in request
+    raise InfluxDBClientError(err_msg, response.status_code)
+influxdb.exceptions.InfluxDBClientError: 400: {"error":"error parsing query: unable to find time zone Asia/Calcutta"}
+[INFO 2025-04-24 06:40:49,289] module: models, process: 25548, thread: 124764027123520
+Running full_clean...
+
+[INFO 2025-04-24 06:40:49,292] module: models, process: 25548, thread: 124764027123520
+Assigning subnet if needed...
+
+[INFO 2025-04-24 06:40:49,292] module: models, process: 25548, thread: 124764027123520
+Saving Tunnel...
+
+[WARNING 2025-04-24 06:40:49,494] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:41:21,667] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:41:23,771] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:41:23,864] module: log, process: 25548, thread: 124764027123520
+Not Found: /webui/
+
+[WARNING 2025-04-24 06:41:27,847] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:41:35,982] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:41:52,096] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:42:24,184] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:42:26,261] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:42:30,345] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:42:38,449] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:42:54,582] module: log, process: 25548, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:43:39,030] module: log, process: 25584, thread: 124764027123520
+Too Many Requests: /api/v1/users/token/
+
+[WARNING 2025-04-24 06:43:39,241] module: log, process: 25584, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:43:41,323] module: log, process: 25584, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
+[WARNING 2025-04-24 06:43:45,415] module: log, process: 25584, thread: 124764027123520
+Not Found: /api/v1/monitoring/device/bf03ae55f9874c4fb43ce73125174937/
+
